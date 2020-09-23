@@ -25,12 +25,12 @@
                     <?php endif; ?>
                     <div class="form-group">
                         <span class="img-div">
-                            <div class="img-placeholder" onclick="">
+                            <div class="text-center img-placeholder" onclick="triggerClick()">
                                 <h4>Update image</h4>
                             </div>
-                            <img src="images/images.jpg" onclick="" class="img-fluid" id="profile-display">
+                            <img src="images/images.jpg" onclick="triggerClick()" class="img-fluid" id="profile-display">
                         </span>
-                        <input type="file" name="profile-img" onchange="" id="profile-img" class="form-control" style="display: none;">
+                        <input type="file" name="profile-img" onchange="showImage(this)" id="profile-img" class="form-control" style="display: none;">
                         <label>Profile Image</label>
                     </div>
                     <div class="form-group">
@@ -45,7 +45,7 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src=""></script>
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
