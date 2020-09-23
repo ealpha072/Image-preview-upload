@@ -1,4 +1,4 @@
-<?php //include_once('process_form.php') ?>
+<?php include_once('server.php'); ?>
 
 
 <!DOCTYPE html>
@@ -16,14 +16,14 @@
         <div class="row">
             <div class="col form-div">
                 <a href="" >View all profiles</a>
-                <form method="post" action="" enctype="multipart/form-data">
-                    <h2 class="text-center">Update Profile</h2>
+                <form method="post" action="myform.php" enctype="multipart/form-data">
+                    <h2 class="text-center mb-3 mt-3">Update Profile</h2>
                     <?php if(!empty($msg)):?>
                         <div class="alert <?php echo $msg_class ?>" role="alert">
                             <?php echo $msg; ?>
                         </div>
                     <?php endif; ?>
-                    <div class="form-group">
+                    <div class="form-group text-center" style="position: relative;">
                         <span class="img-div">
                             <div class="text-center img-placeholder" onclick="triggerClick()">
                                 <h4>Update image</h4>
