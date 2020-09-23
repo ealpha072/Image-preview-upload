@@ -18,7 +18,21 @@
             $msg  = 'Image already exists';
             $msg_class = 'alert-danger';
         }
+        //upload if no errors
+        if(empty($error)){
+            if(move_uploaded_file($_FILES['profile-img']['tmp_name'], $targeted_file)){
+                $myquery= "INSERT INTO users SET image = '$imageName',bio = '$userbio'";
+                if(mysqli_query($conn,$myquery)){
+                    $msg = 'Image uploaded and saved in database';
+                    $msg_class = 'alert-success';
+                }else{
+                    $msg = 'Error in the database';
+                    $msg_class = 'alert-danger';
+                }
+            }else{
+                $msg = 'There was an error uploading file';
+                $msg_class = 'alert-danger'
+            }
+        }
     }
-
-
 ?>
