@@ -1,7 +1,7 @@
 <?php 
     $conn = mysqli_connect('localhost','root','','img-upload');
     $results = mysqli_query($conn, "SELECT * FROM users");
-    $allusers = mysqli_fetch_assoc($results);
+    $allusers = mysqli_fetch_all($results,MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -17,23 +17,25 @@
 <body>
     <div class="container">
         <div class="row">
-            <a href="myform.php">New Profile</a>
-            <br>
-            <br>
-            <table class="table table-bordered">
-                <thead>
-                    <th>Image</th>
-                    <th>Bio</th>
-                </thead>
-                <tbody>
-                    <?php foreach ($allusers as $user): ?>
-                        <tr>
-                            <td><img alt="" width="90" height="90" src="<?php echo 'images/' . $user['profile-img'] ?>"></td>
-                            <td><?php echo $user['bio']; ?> </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+            <div class="col-4 offset-md-4" style="margin-top: 30px;">
+                <a href="myform.php" class="btn btn-success">New Profile</a>
+                <br>
+                <br>
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Image</th>
+                        <th>Bio</th>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($allusers as $user): ?>
+                            <tr>
+                                <td><img alt="" width="90" height="90" src="<?php echo 'images/'.$user['image']; ?>" class=""></td>
+                                <td><?php echo $user['bio']; ?> </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
