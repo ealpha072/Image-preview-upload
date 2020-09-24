@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col form-div">
+            <div class="col form-div offset-md-4">
                 <a href="" >View all profiles</a>
                 <form method="post" action="myform.php" enctype="multipart/form-data">
                     <h2 class="text-center mb-3 mt-3">Update Profile</h2>
@@ -23,14 +23,14 @@
                             <?php echo $msg; ?>
                         </div>
                     <?php endif; ?>
-                    <div class="form-group text-center" style="position: relative;">
+                    <div class="form-group text-center" style="position:relative;">
                         <span class="img-div">
                             <div class="text-center img-placeholder" onclick="triggerClick()">
                                 <h4>Update image</h4>
                             </div>
                             <img src="images/images.jpg" onclick="triggerClick()" class="img-fluid" id="profile-display">
                         </span>
-                        <input type="file" name="profile-img" onchange="showImage(this)" id="profile-img" class="form-control" style="display: none;">
+                        <input type="file" name="profile-img" onchange="showImage(this)" id="profile-img" class="form-control" style="display:none;">
                         <label>Profile Image</label>
                     </div>
                     <div class="form-group">
@@ -45,9 +45,9 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
