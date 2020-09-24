@@ -4,7 +4,7 @@
     $conn = mysqli_connect('localhost','root','','img-upload');
     //if button is clicked;
     if(isset($_POST['save-profile'])){
-        $userbio = mysqli_real_escape_string($conn,$_POST['bio']);
+        $userbio = stripslashes($_POST['bio']);
         $imageName = time(). '-'. $_FILES['profile-img']['name'];
         $location = "images/";
         $targeted_file = $location.basename($imageName);
