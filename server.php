@@ -6,7 +6,7 @@
     if(isset($_POST['save-profile'])){
         $userbio = mysqli_real_escape_string($conn,$_POST['bio']);
         $imageName = time(). '-'. $_FILES['profile-img']['name'];
-        $location = "images/"
+        $location = "images/";
         $targeted_file = $location.basename($imageName);
         //validation(img size;size is in bytes);
         if($_FILES['profile-img']['size']>200000){
@@ -31,7 +31,7 @@
                 }
             }else{
                 $msg = 'There was an error uploading file';
-                $msg_class = 'alert-danger'
+                $msg_class = 'alert-danger';
             }
         }
     }
