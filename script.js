@@ -1,12 +1,12 @@
-function triggerClick(event){
-    document.querySelector('#profile-img');
+function triggerClick(e){
+    document.querySelector('#profile-img').click();
 }
-function showImage(event){
-    if(event.files[0]){
+function showImage(e){
+    if(e.files[0]){
         var reader = new FileReader();
-        reader.onload = function(event){
+        reader.onload = function(e){
             document.querySelector('#profile-display').setAttribute('src',e.target.result);
         }
-        reader.readAsDataURL(event.files[0]);
+        reader.readAsDataURL(e.files[0]);
     }
 }
